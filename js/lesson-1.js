@@ -42,15 +42,52 @@ console.log(getSizen(3));*/
 //менше з чисел a, b
 //Потрібно додати перевірку, що функція отримує числа*/
 
-/*function min(a, b) {
+// function min(a, b) {
 
-  if (typeof a !== "number" || typeof b !== "number" ) {
-    return `не число`;
+//   if (typeof a !== "number" || typeof b !== "number" ) {
+//     return `не число`;
+//   }
+//   return a < b ? a : b;
+// }
+//  console.log (min(4, "7"));
+//  console.log (min (3, 4));
+
+//Напишіть функцію makeInvetedString(), яка замінює регістр кожного символу
+//У сторіччі на протилежний
+//Наприклад 'JavaScript' повинен повернути 'jAVAsCRIPT'
+
+// function regid(str) {
+//   if (typeof str !== 'string') {
+//     return 'not a string';
+//   }
+//   let result = '';
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] == str[i].toLowerCase()) {
+//       result += str[i].toUpperCase();
+//     } else {
+//       result += str[i].toLowerCase();
+//     }
+//   }
+//   return result;
+// }
+// console.log(regid('JavaScript'));
+
+//Напишіть функцію fizzBuzz яка приймає число
+//Якщо число ділитися на 3 повертати fizz
+//якщо ділитися на 5 повертати buzz
+//Якщо ділитися на 3 і на 5 повернути fizzbuzz
+
+function fizzBuzz(num) {
+  if (num % 3 === 0 && num % 5 === 0) {
+    return "fizzbuzz";
+  } else if (num % 5 === 0) {
+    return "buzz";
+  } else if (num % 3 === 0) {
+    return "fizz";
+  } else {
+    return "ділеться на інші числа";
   }
-  return a < b ? a : b;
 }
- console.log (min(4, "7"));
- console.log (min (3, 4));*/
 
 //Напишіть функцію makeInvetedString(), яка замінює регістр кожного символу
 //У сторіччі на протилежний
