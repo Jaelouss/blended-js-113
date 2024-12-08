@@ -56,18 +56,36 @@ console.log(getSizen(3));*/
 //У сторіччі на протилежний
 //Наприклад 'JavaScript' повинен повернути 'jAVAsCRIPT'
 
-function regid(str) {
-  if (typeof str !== 'string') {
-    return 'not a string';
+// function regid(str) {
+//   if (typeof str !== 'string') {
+//     return 'not a string';
+//   }
+//   let result = '';
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] == str[i].toLowerCase()) {
+//       result += str[i].toUpperCase();
+//     } else {
+//       result += str[i].toLowerCase();
+//     }
+//   }
+//   return result;
+// }
+// console.log(regid('JavaScript'));
+
+//Напишіть функцію fizzBuzz яка приймає число
+//Якщо число ділитися на 3 повертати fizz
+//якщо ділитися на 5 повертати buzz
+//Якщо ділитися на 3 і на 5 повернути fizzbuzz
+
+function fizzBuzz(num) {
+  if (num % 3 === 0 && num % 5 === 0) {
+    return "fizzbuzz";
+  } else if (num % 5 === 0) {
+    return "buzz";
+  } else if (num % 3 === 0) {
+    return "fizz";
+  } else {
+    return "ділеться на інші числа";
   }
-  let result = '';
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] == str[i].toLowerCase()) {
-      result += str[i].toUpperCase();
-    } else {
-      result += str[i].toLowerCase();
-    }
-  }
-  return result;
 }
-console.log(regid('JavaScript'));
+console.log(fizzBuzz(27));
