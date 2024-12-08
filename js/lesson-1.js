@@ -3,15 +3,15 @@
 
 /*function getQuoter(min) {
   if (min >= 0 && min < 15) {
-    return 'first quater';
+    return "first quater";
   } else if (min >= 15 && min < 30) {
-    return 'second quater';
+    return "second quater";
   } else if (min >= 30 && min < 45) {
-    return 'third quater';
+    return "third quater";
   } else if (min >= 45 && min <= 59) {
-    return 'four quater';
+    return "four quater";
   } else {
-    return 'incorect';
+    return "incorect";
   }
 }
 console.log(getQuoter(13));*/
@@ -42,7 +42,7 @@ console.log(getSizen(3));*/
 //менше з чисел a, b
 //Потрібно додати перевірку, що функція отримує числа*/
 
-`use strickt`
+
 function min(a, b) {
 
   if (typeof a !== "number" || typeof b !== "number" ) {
@@ -51,4 +51,4 @@ function min(a, b) {
   return a < b ? a : b;
 }
  console.log (min(4, "7"));
- console.log (3, 4);
+ console.log (min (3, 4));
