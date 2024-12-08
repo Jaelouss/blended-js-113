@@ -42,13 +42,32 @@ console.log(getSizen(3));*/
 //менше з чисел a, b
 //Потрібно додати перевірку, що функція отримує числа*/
 
+// function min(a, b) {
 
-function min(a, b) {
+//   if (typeof a !== "number" || typeof b !== "number" ) {
+//     return `не число`;
+//   }
+//   return a < b ? a : b;
+// }
+//  console.log (min(4, "7"));
+//  console.log (min (3, 4));
 
-  if (typeof a !== "number" || typeof b !== "number" ) {
-    return `не число`;
+//Напишіть функцію makeInvetedString(), яка замінює регістр кожного символу
+//У сторіччі на протилежний
+//Наприклад 'JavaScript' повинен повернути 'jAVAsCRIPT'
+
+function regid(str) {
+  if (typeof str !== 'string') {
+    return 'not a string';
   }
-  return a < b ? a : b;
+  let result = '';
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] == str[i].toLowerCase()) {
+      result += str[i].toUpperCase();
+    } else {
+      result += str[i].toLowerCase();
+    }
+  }
+  return result;
 }
- console.log (min(4, "7"));
- console.log (min (3, 4));
+console.log(regid('JavaScript'));
