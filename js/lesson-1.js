@@ -56,18 +56,18 @@ console.log(getSizen(3));*/
 //У сторіччі на протилежний
 //Наприклад 'JavaScript' повинен повернути 'jAVAsCRIPT'
 
-function regid(str) {
-  if (typeof str !== 'string') {
-    return 'not a string';
-  }
-  let result = '';
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] == str[i].toLowerCase()) {
-      result += str[i].toUpperCase();
-    } else {
-      result += str[i].toLowerCase();
-    }
-  }
-  return result;
-}
-console.log(regid('JavaScript'));
+// function regid(str) {
+//   if (typeof str !== 'string') {
+//     return 'not a string';
+//   }
+//   let result = '';
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] == str[i].toLowerCase()) {
+//       result += str[i].toUpperCase();
+//     } else {
+//       result += str[i].toLowerCase();
+//     }
+//   }
+//   return result;
+// }
+// console.log(regid('JavaScript'));
