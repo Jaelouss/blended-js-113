@@ -80,18 +80,54 @@ const arr = [2, 6, 24, 7, 35, 24, "hello", 9, "world"];
 //Функція повертає загальну вартість каменів
 //з ​​таким ім'ям, ціною та кількістю з об'єкта
 
-const stones = [
-  { name: 'Смарагд', price: 1300, quantity: 4 },
-  { name: 'Діамант', price: 2700, quantity: 6 },
-  { name: 'Сапфір', price: 400, quantity: 7 },
-  { name: 'Щебінь', price: 150, quantity: 100 },
-];
+// const stones = [
+//   { name: 'Смарагд', price: 1300, quantity: 4 },
+//   { name: 'Діамант', price: 2700, quantity: 6 },
+//   { name: 'Сапфір', price: 400, quantity: 7 },
+//   { name: 'Щебінь', price: 150, quantity: 100 },
+// ];
 
-function calcTotalPrice(stones, stonesName) {
-  for (let stone of stones) {
-    if (stone.name === stonesName)
-      return stone.price * stone.quantity;
+// function calcTotalPrice(stones, {
+//   for (let stone of stones) {
+//     if (stone.name === stonesName)
+//       return stone.price * stone.quantity;
+//   }
+// }
+
+// console.log(calcTotalPrice(stones, 'Смарагд'));
+
+
+// Угруповання об'єктів студентів по курсам
+// Створіть масив об'єктів, що являють собою різних студентів. Кожен об'єкт повинен містити властивості ім'я, вік та курс.
+// Використовуйте цикл for...of, щоб згрупувати студентів за курсами.
+// Результатом буде об'єкт, де ключами будуть назви курсів, а значення – масиви об'єктів студентів, що належать до відповідного курсу.
+// Очікуванний результат:
+// const groupedStudents = {
+//   Java: [
+//     { name: "Алиса", age: 20, course: "Java" },
+//     { name: "Карл", age: 21, course: "Java" },
+//   ],
+//   Python: [{ name: "Боб", age: 22, course: "Python" }],
+//   JavaScript: [{ name: "Джон", age: 23, course: "JavaScript" }],
+// };
+
+function groupStudentByCourse(students) {
+  const groupStudents = {};
+  for (const student of students) {
+    const course = student.course;
+    if (!groupStudents[course]) {
+      groupStudents[course] = [];
+    }
+    groupStudents[course].push(student);
   }
+  return groupStudents;
 }
 
-console.log(calcTotalPrice(stones, 'Смарагд'));
+const students = [
+  { name: "Алиса", age: 20, course: "Java" },
+  { name: "Боб", age: 22, course: "Python" },
+  { name: "Карл", age: 21, course: "Java" },
+  { name: "Джон", age: 23, course: "JavaScript" },
+];
+
+console.log(groupStudentByCourse(students));
