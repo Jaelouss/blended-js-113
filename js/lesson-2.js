@@ -14,16 +14,40 @@
 // пробілом (параметр string)
 // і повертає найдовше слово у цьому рядку
 
-const string = "Nunc sed turpis a felis in nunc fringilla";
-function findLongestWord(string) {
-  let arr = string.split(" ");
-  console.log(arr);
-  let longWord = arr[0];
-  for (const element of arr) {
-    if (element.length > longWord.length) {
-      longWord = element;
+// const string = "Nunc sed turpis a felis in nunc fringilla";
+// function findLongestWord(string) {
+//   let arr = string.split(" ");
+//   console.log(arr);
+//   let longWord = arr[0];
+//   for (const element of arr) {
+//     if (element.length > longWord.length) {
+//       longWord = element;
+//     }
+//   }
+//   return longWord;
+// }
+// console.log(findLongestWord(string));
+
+/*
+Напишіть функцію caclculateAverage()
+яка приймає довільну кількість
+аргументів і повертає їхнє середнє значення.
+Додати перевірку, що аргументи це числа.
+const arr = [2, 6, 24, 7, 35, 24, "hello", 9, "world"];
+*/
+
+function caclculateAverage(array) {
+  let sum = 0;
+  let count = 0;
+  for (const item of array) {
+    if (typeof item === "number") {
+      sum += item;
+      count++;
     }
   }
-  return longWord;
+  return sum / count || 0;
 }
-console.log(findLongestWord(string));
+
+const arr = [2, 6, 24, 7, 35, 24, "hello", 9, "world"]
+console.log(caclculateAverage(arr));
+console.log(caclculateAverage([]));
