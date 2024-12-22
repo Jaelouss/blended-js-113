@@ -36,18 +36,40 @@
 const arr = [2, 6, 24, 7, 35, 24, "hello", 9, "world"];
 */
 
-function caclculateAverage(array) {
+// function caclculateAverage(array) {
+//   let sum = 0;
+//   let count = 0;
+//   for (const item of array) {
+//     if (typeof item === "number") {
+//       sum += item;
+//       count++;
+//     }
+//   }
+//   return sum / count || 0;
+// }
+
+// const arr = [2, 6, 24, 7, 35, 24, "hello", 9, "world"]
+// console.log(caclculateAverage(arr));
+// console.log(caclculateAverage([]));
+
+//У нас є об'єкт, у якому зберігатимуться зарплати
+//нашої команди
+//Напишіть код для сумування всіх зарплат і
+//збережіть його результат у змінній sum.
+//Якщо об'єкт salaries порожній, то результат має бути 0
+
+const salaries = {
+  Mango: 100,
+  Poly: 160,
+  Ajax: 1470,
+};
+
+function foo(salaries) {
   let sum = 0;
-  let count = 0;
-  for (const item of array) {
-    if (typeof item === "number") {
-      sum += item;
-      count++;
-    }
+  for (const key of Object.values(salaries)) {
+    sum += key;
   }
-  return sum / count || 0;
+  return sum;
 }
 
-const arr = [2, 6, 24, 7, 35, 24, "hello", 9, "world"]
-console.log(caclculateAverage(arr));
-console.log(caclculateAverage([]));
+console.log(foo(salaries));
