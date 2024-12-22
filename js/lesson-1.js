@@ -144,19 +144,19 @@ console.log(regid('JavaScript'));*/
 //Якщо введено пароль "Я головний",
 //то вивести рядок "Добрий день!"
 //інакше виводити рядок "Невірний пароль!"
-const userRule = prompt('Введіть логін');
-console.log('userRule: ', userRule);
+// const userRule = prompt('Введіть логін');
+// console.log('userRule: ', userRule);
 
-if (userRule === 'Admin') {
-  const password = prompt('введiть пароль');
-  console.log(password);
-  if (!password) {
-    console.log('Скасовано');
-  } else if (password === 'Я головний') {
-    console.log('Добрий день!');
-  } else {
-    console.log('Невірний пароль!');
-  }
-} else {
-  console.log('Я вас не знаю');
-}
+// if (userRule === 'Admin') {
+//   const password = prompt('введiть пароль');
+//   console.log(password);
+//   if (!password) {
+//     console.log('Скасовано');
+//   } else if (password === 'Я головний') {
+//     console.log('Добрий день!');
+//   } else {
+//     console.log('Невірний пароль!');
+//   }
+// } else {
+//   console.log('Я вас не знаю');
+// }
