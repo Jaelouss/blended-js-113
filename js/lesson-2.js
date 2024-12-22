@@ -58,18 +58,40 @@ const arr = [2, 6, 24, 7, 35, 24, "hello", 9, "world"];
 //збережіть його результат у змінній sum.
 //Якщо об'єкт salaries порожній, то результат має бути 0
 
-const salaries = {
-  Mango: 100,
-  Poly: 160,
-  Ajax: 1470,
-};
+// const salaries = {
+//   Mango: 100,
+//   Poly: 160,
+//   Ajax: 1470,
+// };
 
-function foo(salaries) {
-  let sum = 0;
-  for (const key of Object.values(salaries)) {
-    sum += key;
+// function foo(salaries) {
+//   let sum = 0;
+//   for (const key of Object.values(salaries)) {
+//     sum += key;
+//   }
+//   return sum;
+// }
+
+// console.log(foo(salaries));
+
+//Напишіть ф-цію calcTotalPrice(stones, stonesName),
+//яка приймає масив об'єктів і
+//Рядок з назвою каменю.
+//Функція повертає загальну вартість каменів
+//з ​​таким ім'ям, ціною та кількістю з об'єкта
+
+const stones = [
+  { name: 'Смарагд', price: 1300, quantity: 4 },
+  { name: 'Діамант', price: 2700, quantity: 6 },
+  { name: 'Сапфір', price: 400, quantity: 7 },
+  { name: 'Щебінь', price: 150, quantity: 100 },
+];
+
+function calcTotalPrice(stones, stonesName) {
+  for (let stone of stones) {
+    if (stone.name === stonesName)
+      return stone.price * stone.quantity;
   }
-  return sum;
 }
 
-console.log(foo(salaries));
+console.log(calcTotalPrice(stones, 'Смарагд'));
