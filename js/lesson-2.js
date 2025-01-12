@@ -96,7 +96,6 @@ const arr = [2, 6, 24, 7, 35, 24, "hello", 9, "world"];
 
 // console.log(calcTotalPrice(stones, 'Смарагд'));
 
-
 // Угруповання об'єктів студентів по курсам
 // Створіть масив об'єктів, що являють собою різних студентів. Кожен об'єкт повинен містити властивості ім'я, вік та курс.
 // Використовуйте цикл for...of, щоб згрупувати студентів за курсами.
@@ -111,23 +110,67 @@ const arr = [2, 6, 24, 7, 35, 24, "hello", 9, "world"];
 //   JavaScript: [{ name: "Джон", age: 23, course: "JavaScript" }],
 // };
 
-function groupStudentByCourse(students) {
-  const groupStudents = {};
-  for (const student of students) {
-    const course = student.course;
-    if (!groupStudents[course]) {
-      groupStudents[course] = [];
+// function groupStudentByCourse(students) {
+//   const groupStudents = {};
+//   for (const student of students) {
+//     const course = student.course;
+//     if (!groupStudents[course]) {
+//       groupStudents[course] = [];
+//     }
+//     groupStudents[course].push(student);
+//   }
+//   return groupStudents;
+// }
+
+// const students = [
+//   { name: "Алиса", age: 20, course: "Java" },
+//   { name: "Боб", age: 22, course: "Python" },
+//   { name: "Карл", age: 21, course: "Java" },
+//   { name: "Джон", age: 23, course: "JavaScript" },
+// ];
+
+// console.log(groupStudentByCourse(students));
+
+// =======================================================
+// function transformString(string) {
+//   const words = string.split("_");
+//   return words.join("-");
+// }
+
+// transformString("user_age"); // "user-age"
+// transformString("price_per_droid"); // "price-per-droid"
+// ============================================================
+// function calculateEngravingPrice(message, pricePerWord) {
+//   const newMessage = message.split(" ");
+//   const wordMessage = newMessage.length;
+//   return wordMessage * pricePerWord;
+// }
+// calculateEngravingPrice("JavaScript is in my blood", 10);
+// ================================================================
+// const planets = ["Earth", "Mars", "Venus"];
+
+// for (let i = 0; i < planets.length; i += 1) {
+//   console.log(planets[i]);
+// }
+// ===================================================================
+// function sum(a, b) {
+//   console.log(arguments);
+//   return a + b;
+// }
+
+// sum(2, 5);
+// ======================================================================
+// Виконай рефакторинг функції countProps(object), замінивши перебір ключів за допомогою циклу for…in на метод Object.keys() для отримання масиву властивостей. Функція має повернути кількість властивостей в об'єкті object.
+
+function countProps(object) {
+  let propCount = 0;
+  const keys = Object.keys(countProps);
+
+  for (const key in object) {
+    if (object.values(key)) {
+      propCount += 1;
     }
-    groupStudents[course].push(student);
   }
-  return groupStudents;
+
+  return propCount;
 }
-
-const students = [
-  { name: "Алиса", age: 20, course: "Java" },
-  { name: "Боб", age: 22, course: "Python" },
-  { name: "Карл", age: 21, course: "Java" },
-  { name: "Джон", age: 23, course: "JavaScript" },
-];
-
-console.log(groupStudentByCourse(students));
