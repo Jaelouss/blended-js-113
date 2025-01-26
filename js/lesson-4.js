@@ -48,26 +48,58 @@
 https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
 */
 
-const box = document.querySelector("#box");
-const decreaseBtn = document.querySelector("#decrease");
-const increaseBtn = document.querySelector("#increase");
+// const box = document.querySelector("#box");
+// const decreaseBtn = document.querySelector("#decrease");
+// const increaseBtn = document.querySelector("#increase");
 
-increaseBtn.addEventListener("click", () => {
-  let width = parseFloat(getComputedStyle(box).width);
-  width = width + 10 + "px";
-  let height = parseFloat(getComputedStyle(box).height);
-  height = height + 10 + "px";
-  console.log(width);
-  box.style.width = width;
-  box.style.height = height;
+// increaseBtn.addEventListener("click", () => {
+//   let width = parseFloat(getComputedStyle(box).width);
+//   width = width + 10 + "px";
+//   let height = parseFloat(getComputedStyle(box).height);
+//   height = height + 10 + "px";
+//   console.log(width);
+//   box.style.width = width;
+//   box.style.height = height;
+// });
+
+// decreaseBtn.addEventListener("click", () => {
+//   let width = parseFloat(getComputedStyle(box).width);
+//   width = width - 10 + "px";
+//   let height = parseFloat(getComputedStyle(box).height);
+//   height = height - 10 + "px";
+//   console.log(width);
+//   box.style.width = width;
+//   box.style.height = height;
+// });
+
+/*
+Завдання 5
+При натисканні на коло він повинен слідувати за курсором.
+При повторному натисканні він стає в початкове положення.
+https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/MouseEvent
+https://developer.mozilla.org/ru/docs/Web/API/MouseEvent/pageX
+https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageY
+*/
+const circle = document.querySelector('.outerCircle');
+let condition = false;
+circle.addEventListener('click', (event) => {
+  if (!condition) {
+    circle.style.position = 'absolute';
+    circleMove(event);
+    window.addEventListener('mousemove', circleMove);
+    condition = true;
+  } else {
+    window.removeEventListener('mousemove', circleMove);
+    circle.style.translate = '0% 0%';
+    circle.style.position = 'static';
+    condition = false;
+  }
 });
 
-decreaseBtn.addEventListener("click", () => {
-  let width = parseFloat(getComputedStyle(box).width);
-  width = width - 10 + "px";
-  let height = parseFloat(getComputedStyle(box).height);
-  height = height - 10 + "px";
-  console.log(width);
-  box.style.width = width;
-  box.style.height = height;
-});
+function circleMove(event) {
+  let posX = event.pageX;
+  let posY = event.pageY;
+  circle.style.left = posX + 'px';
+  circle.style.top = posY + 'px';
+  circle.style.translate = '-50% -50%';
+}
