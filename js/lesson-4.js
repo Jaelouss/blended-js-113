@@ -80,26 +80,43 @@ https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/MouseEvent
 https://developer.mozilla.org/ru/docs/Web/API/MouseEvent/pageX
 https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageY
 */
-const circle = document.querySelector('.outerCircle');
-let condition = false;
-circle.addEventListener('click', (event) => {
-  if (!condition) {
-    circle.style.position = 'absolute';
-    circleMove(event);
-    window.addEventListener('mousemove', circleMove);
-    condition = true;
-  } else {
-    window.removeEventListener('mousemove', circleMove);
-    circle.style.translate = '0% 0%';
-    circle.style.position = 'static';
-    condition = false;
-  }
-});
+// const circle = document.querySelector('.outerCircle');
+// let condition = false;
+// circle.addEventListener('click', (event) => {
+//   if (!condition) {
+//     circle.style.position = 'absolute';
+//     circleMove(event);
+//     window.addEventListener('mousemove', circleMove);
+//     condition = true;
+//   } else {
+//     window.removeEventListener('mousemove', circleMove);
+//     circle.style.translate = '0% 0%';
+//     circle.style.position = 'static';
+//     condition = false;
+//   }
+// });
 
-function circleMove(event) {
-  let posX = event.pageX;
-  let posY = event.pageY;
-  circle.style.left = posX + 'px';
-  circle.style.top = posY + 'px';
-  circle.style.translate = '-50% -50%';
-}
+// function circleMove(event) {
+//   let posX = event.pageX;
+//   let posY = event.pageY;
+//   circle.style.left = posX + 'px';
+//   circle.style.top = posY + 'px';
+//   circle.style.translate = '-50% -50%';
+// }
+
+/*<!-- ЗАДАЧА 6 -->
+/*
+Завдання 6
+Натиснувши кнопку "Подвоювати", збільшити значення
+у кожному елементі списку у 2 рази
+*/
+
+// const button = document.querySelector("#double");
+// const items = document.querySelectorAll(".listItem");
+
+// button.addEventListener("click", () => {
+//   items.forEach((item) => {
+//     item.textContent = item.textContent * 2;
+//     console.log(item.textContent);
+//   });
+// });
